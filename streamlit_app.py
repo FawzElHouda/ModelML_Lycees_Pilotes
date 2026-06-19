@@ -8,9 +8,21 @@ scaler = joblib.load("scaler.pkl")
 
 st.title("Prédiction des Affectations aux Lycées Pilotes")
 
-cre = st.number_input("CRE encodé", min_value=0)
-type_candidature = st.number_input("Type candidature encodé", min_value=0)
-genre = st.number_input("Genre encodé", min_value=0)
+cre = st.selectbox(
+    "CRE",
+    ["Tunis 1", "Tunis 2", "Ariana", "Sousse", "Monastir"]
+)
+
+type_candidature = st.selectbox(
+    "Type candidature",
+    ["Libre", "Privé", "Public"]
+)
+
+genre = st.selectbox(
+    "Genre",
+    ["Feminin", "Masculin"]
+)
+
 effectif_inscrits = st.number_input("Effectif inscrits", min_value=0)
 effectif_presentes = st.number_input("Effectif présentés", min_value=0)
 taux_presence = st.number_input("Taux présence", min_value=0.0, max_value=1.0)
